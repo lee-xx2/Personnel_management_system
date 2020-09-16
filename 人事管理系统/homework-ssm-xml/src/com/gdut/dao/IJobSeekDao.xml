@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gdut.dao.IJobSeekDao">
+	<select id="queryAll" resultType="job_seeker">
+		select * from job_seeker
+	</select>
+	
+	<select id="getTotalCount" resultType="Integer">
+		select count(*) from job_seeker where name like '%' #{0} '%'
+	</select>
+	
+	<select id="queryByPage" resultType="job_seeker">
+		select * from 
+		(select * from job_seeker where name like '%' #{0} '%') new
+		 limit #{1},#{2}
+	</select>
+	
+	<update id="xiugai">
+		update job_seeker set name=#{1},age=#{2},sex=#{3},major=#{4},career=#{5}
+		where id=#{0}
+	</update>
+	
+	<update id="shanchu">
+		delete from job_seeker where id=#{0}
+	</update>
+	
+	<select id="queryMessage" resultType="job_seeker">
+		select * from job_seeker where id=#{0}
+	</select>
+	
+	<update id="insertjobseeker">
+		insert job_seeker values(#{id},#{name},#{age},#{sex},#{major},#{career})
+	</update>
+	
+</mapper>

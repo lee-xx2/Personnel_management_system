@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocaton="http://java.sun.com/xml/ns/j2eeweb-jsptaglibrary_2_1.xsd">
+            <description>Simple tag examples</description>
+            <tlib-version>1.0</tlib-version>
+            <jspversion>1.1</jspversion>
+            <short-name>My First Taglib Example</short-name>
+            <uri>http://www.mydomain.com/sample</uri>
+            <tag>
+                     <name>show</name>
+                     <tag-class>com.gdut.mytag.show_message</tag-class>
+                     <body-content>scriptless</body-content>
+                     
+                     <attribute>
+                      <name>no</name>
+                      
+                      <required>true</required>
+                      <rtexprvalue>true</rtexprvalue> 
+                     </attribute>
+                     
+                     <attribute>
+                      <name>depart_name</name>
+                      <required>true</required>
+                      <rtexprvalue>true</rtexprvalue> 
+                     </attribute>
+                     <attribute>
+                      <name>depart_name</name>
+                      <required>true</required>
+                      <rtexprvalue>true</rtexprvalue> 
+                     </attribute>
+                     <attribute>
+                      <name>work_type</name>
+                      <required>true</required>
+                      <rtexprvalue>true</rtexprvalue> 
+                     </attribute>
+                     <attribute>
+                      <name>now_number</name>
+                      <required>true</required>
+                      <rtexprvalue>true</rtexprvalue> 
+                     </attribute>
+                     <attribute>
+                      <name>work</name>
+                      <required>true</required>
+                      <rtexprvalue>true</rtexprvalue> 
+                     </attribute>
+                     <attribute>
+                      <name>remain_number</name>
+                      <required>true</required>
+                      <rtexprvalue>true</rtexprvalue> 
+                     </attribute>
+            </tag>
+           
+</taglib>

@@ -1,0 +1,108 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+body{
+	background-color:rgba(0, 0, 0, 0.5);
+}
+.header{
+	height: 50px;
+	background-color: gray;
+}
+
+.form-c{
+	width: 150px;
+	height: 25px;
+	border: 0.5px solid #FFFFFF;
+	padding: 5px 5px;
+	margin-top: 15px;
+	font-size: 16px;
+	background-color: rgba(0, 0, 0, 0.2);
+	color: white;
+}
+
+#a_con{
+	width: 80px;
+	height: 30px;
+	background-color: #5796cc;
+	float: right;
+	padding: 8px 3px;
+	padding-bottom: 0px;
+	text-align: center;
+	margin-right: 10px;
+}
+#a_con:hover{
+	background-color:#3471b0 ;
+	box-shadow:  #3471b0 0px 0px 5px;
+}
+#a_con a{
+	text-decoration: none;
+	color: white;
+	font-size: 14px;
+	padding: 0px;
+}
+.but{
+	width: 70px;
+	border: none;
+	height: 35px;
+	background-color: #5796cc;
+	text-align: center;
+	color: white;
+	font-size: 18px;
+	
+}
+.but:hover{
+	background-color: #3471b0;
+	cursor: pointer;
+	box-shadow:  #3471b0 0px 0px 5px;
+}
+.select_form #name_text{
+	margin-right: 20px;
+}
+
+.banner{
+	width: 900px;
+	margin: auto;
+	text-align: center;
+}
+.select_form{
+	font-size: 18px;
+	color: white;
+}
+.cent{
+	padding: 20px 10px 15px;
+	border: 1px solid #3471B0;
+	width: 900px;
+	height: 500px;
+	margin: 50px auto;
+	text-align: center;
+	border: 0.3px solid #495B69;
+	background-color: rgba(0, 0, 0, 0.3);
+	box-shadow: #495B69 0px 0px 10px;
+}
+.op{
+
+	font-size: 18px;
+	width: 40px;
+}
+.bannerF{
+	
+	
+}
+table{
+	margin-bottom:20px;
+	line-height: 30px;
+	color:#333333;
+}
+#select_table{
+	color: #DCDCDC;
+	margin:50px 0px;
+}
+#select_table a{
+	color:white;
+	width:60px;
+	text-decoration: none;
+	font-size:20px;
+}
+
+

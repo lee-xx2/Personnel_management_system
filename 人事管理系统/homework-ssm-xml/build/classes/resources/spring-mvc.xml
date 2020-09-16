@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/aop 
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+        
+        <!-- 注册HandlerMapping -->
+        <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        	<property name="urlMap">
+        		<map>
+        			<entry key="/login.do" value="loginController"/>
+        			<entry key="/register.do" value="registerController"></entry>
+        			<entry key="/insert.do" value="insertController"/>
+        			<entry key="/delete.do" value="deleteController"/>
+        			<entry key="/delete1.do" value="delete1Controller"/>
+        			
+        			
+        			<entry key="/outlogin.do" value="outlogincontroller"/>
+        			
+        			<entry key="/editpassword.do" value="editpasswordcontroller"/>
+        			<entry key="/editpassword1.do" value="editpassword1controller"/>
+        			<entry key="/queryall.do" value="newcontroller"/>
+        			
+        			<entry key="/querybypage.do" value="querybypagecontroll"/>
+        			<entry key="/xiugai.do" value="existing_sheet"/>
+        			<entry key="/shanchu.do" value="existing_sheet"/>
+        			<entry key="/add1.do" value="addjbController"/>
+        			
+        			<entry key="/querybypage1.do" value="querybypagecontroll1"/>
+        			<entry key="/xiugai1.do" value="shanchuemployeescontroller"/>
+        			<entry key="/shanchu1.do" value="shanchuemployeescontroller"/>
+        			<entry key="/add2.do" value="addewController"/>  
+        			
+        			<entry key="/show.do" value="show_message"/>
+        			<entry key="/filedownload.do" value="filedownloadcontroller"/>
+        		     			
+        			<entry key="/querybypage2.do" value="querybypagecontroll2"/>
+        			<entry key="/xiugai2.do" value="wgcontroller"/>
+        			<entry key="/shanchu2.do" value="wgcontroller"/>
+        			<entry key="/add3.do" value="addwgController"/>       			
+        		</map>
+        	</property>
+        </bean>
+        
+        <!-- 注册处理器 -->
+        <!--工资的三个操作  -->
+        <bean id="querybypagecontroll2" class="com.gdut.Controller.QueryByPageController2">
+        	<property name="service" ref="wagesService"></property>
+        </bean>
+         <bean id="wgcontroller" class="com.gdut.Controller.Existing_Wages">
+        	<property name="service" ref="wagesService"></property>
+        </bean>
+        <bean id="addwgController" class="com.gdut.Controller.AddwgController">
+        	<property name="service" ref="wagesService"></property>
+        </bean>
+        
+        
+        
+        <bean id="loginController" class="com.gdut.Controller.LoginController">
+        	<property name="service" ref="personService"></property>
+        	<property name="service2" ref="adminService"></property>
+        </bean>
+        
+        <bean id="registerController" class="com.gdut.Controller.RegisterController">
+        	<property name="service" ref="personService"></property>
+        </bean>
+        
+        <bean id="insertController" class="com.gdut.Controller.InsertController">
+        	<property name="service" ref="personService"></property>
+        </bean>
+        
+        <bean id="deleteController" class="com.gdut.Controller.DeleteController">
+        	<property name="service" ref="personService"></property>
+        </bean>
+        <bean id="delete1Controller" class="com.gdut.Controller.Delete1Controller">
+        	<property name="service" ref="adminService"></property>
+        </bean>
+        
+        <bean id="querybypagecontroll" class="com.gdut.Controller.QueryByPageController">
+        	<property name="service" ref="workService"></property>
+        </bean>
+        <bean id="querybypagecontroll1" class="com.gdut.Controller.QueryByPageController1">
+        	<property name="service" ref="jobSeekService"></property>
+        </bean>
+        
+        <bean id="outlogincontroller" class="com.gdut.Controller.OutLoginController">
+        </bean>
+        
+        <bean id="editpasswordcontroller" class="com.gdut.Controller.EditPasswordController">
+        	<property name="service" ref="personService"></property>
+        </bean>
+         <bean id="editpassword1controller" class="com.gdut.Controller.EditPassword1Controller">
+        	<property name="service" ref="adminService"></property>
+        </bean>
+        
+        <bean id="newcontroller" class="com.gdut.Controller.NewController">
+        	<property name="service" ref="jobSeekService"></property>
+        </bean>
+        
+        <bean id="existing_sheet" class="com.gdut.Controller.Existing_Sheet">
+        	<property name="service" ref="existService"></property>
+        </bean>
+        
+        <bean id="shanchuemployeescontroller" class="com.gdut.Controller.Existing_Jobseeker">
+        	<property name="service" ref="jobSeekService"></property>
+        </bean>
+        
+        <bean id="show_message" class="com.gdut.mytag.show_message">
+        	<property name="service" ref="existService"></property>
+        </bean>
+        
+        <bean id="filedownloadcontroller" class="com.gdut.Controller.FileDownloadController">
+        </bean>
+        
+        <!--添加员工  -->
+        <bean id="addjbController" class="com.gdut.Controller.AddjbController">
+        	<property name="service" ref="jobSeekService"></property>
+        </bean>
+        
+       <!--添加部门  -->
+        <bean id="addewController" class="com.gdut.Controller.AddewController">
+        	<property name="service" ref="existService"></property>
+        </bean>
+        
+        
+        
+        <!-- 唯一用到的一次注解式 -->
+        <context:component-scan base-package="com.gdut.Controller"/>
+        
+        <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        	<property name="maxUploadSize">
+				<value>10000000000</value> <!-- 以字节byte为单位 -->
+			</property>
+			<property name="defaultEncoding">
+				<value>UTF-8</value>
+			</property>
+        </bean>
+        
+        
+        <mvc:annotation-driven/>
+       
+       	
+       	
+</beans>
+
+
+
+
+
+

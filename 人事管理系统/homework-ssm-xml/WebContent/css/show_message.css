@@ -1,0 +1,16 @@
+body{
+	background-color:rgba(0, 0, 0, 0.5);
+}
+.bbyy{
+	color: whitesmoke;
+	font-size: 20px;
+}
+.bbyy a{
+	color:darkblue;
+}
+.tablecss{
+	margin: 30px auto;
+	border: 1px;
+	font-size: 20px;
+
+}

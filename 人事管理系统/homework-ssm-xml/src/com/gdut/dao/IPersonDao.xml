@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gdut.dao.IPersonDao">
+	<select id="queryLogin" resultType="Login">
+		select * from login 
+		where accound=#{accound}
+	</select>
+	
+	<select id="queryByAccound" resultType="Integer">
+		select count(*) from login
+		where accound=#{accound}
+	</select>
+	
+	<update id="insertLogin">
+		insert login values(#{name},#{accound},#{password})
+	</update>
+	
+	<update id="deleteLogin">
+		delete from login where accound=#{accound}
+	</update>
+	
+	<update id="updatePassword">
+		update login set password = #{1} where accound = #{0}
+	</update>
+</mapper>

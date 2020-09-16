@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gdut.dao.IAdminDao">
+	<select id="queryAdmin" resultType="Admin">
+		select * from admin 
+		where accound=#{accound}
+	</select>
+	
+	<update id="updatePassword">
+		update admin set password = #{1} where accound = #{0}
+	</update>
+	
+	<update id="deleteadmin">
+		delete from admin where accound=#{accound}
+	</update>
+	
+</mapper>

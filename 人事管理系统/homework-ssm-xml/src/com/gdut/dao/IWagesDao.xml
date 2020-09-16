@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gdut.dao.IWagesDao">
+	<select id="queryAll" resultType="wages">
+		select * from wages
+	</select>
+	
+	<select id="getTotalCount" resultType="Integer">
+		select count(*) from wages where name like '%' #{0} '%'
+	</select>
+	
+	<select id="queryByPage" resultType="wages">
+		select * from 
+		(select * from wages where name like '%' #{0} '%') new
+		 limit #{1},#{2}
+	</select>
+	
+	<update id="xiugai">
+		update wages set department=#{1},name=#{2},biaozhun=#{3},ticheng=#{4},yingfa=#{5},koushui=#{6},shifa=#{7}
+		where id=#{0}
+	</update>
+	
+	<update id="shanchu">
+		delete from wages where id=#{0}
+	</update>
+
+	
+	<update id="insertwages">
+		insert wages values(#{department},#{id},#{name},#{biaozhun},#{ticheng},#{yingfa},#{koushui},#{shifa})
+	</update>
+		
+	<select id="queryMessage" resultType="wages">
+		select * from wages where id=#{0}
+	</select>
+	
+</mapper>

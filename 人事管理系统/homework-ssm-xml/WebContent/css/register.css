@@ -1,0 +1,61 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: url(../img/editpassword.jpg) center center no-repeat ;
+	
+}
+.banner{
+	
+	height: 900px;
+	background-color:rgba(0, 0, 0, 0.5);
+}
+.cent{
+	padding: 20px 10px 15px;
+	border: 1px solid #3471B0;
+	width: 500px;
+	height: 380px;
+	margin: 200px auto;
+	text-align: center;
+	border: 0.3px solid #495B69;
+	background-color: rgba(0, 0, 0, 0.3);
+	box-shadow: #495B69 0px 0px 10px;
+}
+.cent h1{
+	margin: 15px auto;
+	font-family: "黑体";
+	font-size: 30px;
+	color: white ;
+}
+.form-control{
+	width: 280px;
+	border: 0.5px solid #FFFFFF;
+	padding: 10px 5px;
+	margin-top: 15px;
+	font-size: 16px;
+	background-color: rgba(0, 0, 0, 0.2);
+	color: white;
+}
+.form-control:selection{
+	box-shadow: #5796cc 0px 0px 10px;
+}
+.form-control:hover {
+	box-shadow: #5796cc 0px 0px 10px;
+}
+
+::-webkit-input-placeholder {
+	/* WebKit browsers */
+	color: lightgray;
+}
+.but{
+	width: 290px;
+	border: none;
+	height: 38px;
+	background-color: #5796cc;
+}
+.but:hover{
+	background-color: #3471b0;
+	cursor: pointer;
+	box-shadow:  #3471b0 0px 0px 5px;
+}
